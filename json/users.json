@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "name": "aaaa",
+      "role": "admin",
+      "id": 22,
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png"
+    },
+    {
+      "name": "bbbb",
+      "role": "user",
+      "id": 203,
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/203.png"
+    },
+    {
+      "name": "ccccc",
+      "role": "guest",
+      "id": 217,
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/217.png"
+    },
+    {
+      "name": "ddddd",
+      "role": "user",
+      "id": 53,
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png"
+    }
+  ]
+}

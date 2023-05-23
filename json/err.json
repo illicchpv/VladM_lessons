@@ -1,0 +1,14 @@
+error
+{ error
+  "sname": "ФТ",
+  "groups": [
+    {
+      "gname": "ФТ1",
+      "file": "1"
+    },
+    {
+      "gname": "ФТ2",
+      "file": "2"
+    }
+  ]
+}
