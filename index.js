@@ -74,7 +74,8 @@ async function fetchAsyncTodos() {
 // ДЗ ===============================
 
 document.addEventListener('DOMContentLoaded', async function () {
-  let url = 'https://aclive.ru/Content/Tests/json/users.json'
+  // let url = 'https://aclive.ru/Content/Tests/json/users.json'
+  let url = 'https://illicchpv.github.io/VladM_lessons/json/users.json'
 
   console.log('fetch users started')
 
