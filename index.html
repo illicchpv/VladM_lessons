@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    .usersBox {
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px 20px;
+    }
+
+    .usersBox .usersBox__block {
+      padding: 10px;
+      border: 1px solid #756e6e;
+      border-radius: 10%;
+      /* width: 110px;  */
+      /* overflow: hidden; */
+    }
+
+    .usersBox .usersBox_img {
+      height: 100px;
+    }
+
+    .usersBox .usersBox__name {
+      /* text-align: center; */
+      font-size: 22px;
+    }
+    .usersBox .usersBox__name span{ font-size: 9px; }
+    .usersBox .usersBox__role{
+      font-size: 12px;
+    }
+    .usersBox .usersBox__role{ font-size: 9px; }
+
+    .usersBox .usersBox_img:hover {
+      transform: scale(2.5, 2.5);
+    }
+  </style>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+
+    <h1>Урок 8. JavaScript. Как работает Async, Await. <br>Работа с сервером c fetch</h1>
+    <h3>Задача: </h3>
+    <h4>
+      Необходимо получить список пользователей с удаленного сервера и отобразить их на странице.
+      <br>При этом,
+      данные должны быть получены асинхронно, а отображение пользователей на странице
+      не должно прерываться управление
+      потоком выполнения кода.
+    </h4>
+    <h4>
+      Для решения данной задачи, мы можем использовать async/await вместе с методом fetch(),
+      <br>который мы используем для
+      получения данных с сервера.
+      </p>
+
+      <hr>
+
+      <div class="usersBox" id="usersBox">
+      </div>
+  </div>
+
+  <script id="usersBoxTempl" type="text/template">
+    <div class="usersBox__block">
+      <img class="usersBox_img" src="__src__" alt="id: __id__" title="id: __id__">
+      <div class="usersBox__name"><span>name:</span> __name__</div>
+      <div class="usersBox__role"><span>role:</span> __role__</div>
+    </div>
+  </script>
+</body>
+
+</html>
