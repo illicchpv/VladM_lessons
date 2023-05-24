@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <title>По Владилен Минин | Урок 8</title>
+
+  <style>
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    #spinner{
+      position: absolute;
+      left: 0;top: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(10, 10, 10, .2);
+      z-index: 1;
+    }
+    #spinner h3{
+      font-size: 50px;
+    }
+    #dataTable th, #dataTable td{
+      text-align: left;
+      padding-right: 20px;
+    }
+  </style>
+
+  <script src="index02.js"></script>
+</head>
+
+<body>
+  <!-- 
+    https://www.youtube.com/watch?v=SHiUyM_fFME 
+
+    https://illicchpv.github.io/VladM_lessons/
+  -->
+
+  <div class="container">
+
+    <h3>Задача: </h3>
+    <p>
+      Создайте веб-страницу с кнопкой, которая при нажатии отправляет 
+      <br>AJAX-запрос к API с помощью fetch() для получения некоторых данных. 
+      <br>Пока запрос обрабатывается, на экране отображается спиннер, 
+      <br>а после получения ответа данные выводятся в виде таблицы. 
+      <br>Для обработки асинхронных операций используйте async и await.
+    </p>
+    <hr>
+    <button id="getDataBtn">Get Data</button>
+    <hr>
+    <div id="spinner" style="display: none;"></div>
+    <table id="dataTable" style="display: none;">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- data will be inserted here from usersRowTempl -->
+      </tbody>
+    </table>    
+  </div>
+
+  <script id="usersRowTempl" type="text/template">
+    <tr>
+      <td>__Name__</td>
+      <td>__Email__</td>
+      <td>__Phone__</td>
+    </tr>
+</script>
+</body>
+
+</html>
