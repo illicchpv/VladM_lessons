@@ -87,19 +87,32 @@
       </p>
 
       <hr>
+      <button onclick="doTest(1)">test1</button>
+      <button onclick="doTest(2)">test2</button>
+      <hr>
 
       <div class="usersBox" id="usersBox">
       </div>
 
       <hr>
-      <button onclick="doTest(1)">test1</button>
-      <button onclick="doTest(2)">test2</button>
       <script>
         async function doTest(v) {
+          // https://cors.sh/
+          /*
+          fetch('https://proxy.cors.sh/https://acme.com', {
+            headers: {
+              'x-cors-api-key': 'temp_27bc8044229e161f204cf85a4557fe34'
+            }
+          })
+          */
           if (v === 1) {
-            let url = 'http://miet82.atwebpages.com/json/ok.json' + '?v=' + (new Date().getTime())
+            let proxy = ''
+            let url
+            // url = 'http://miet82.atwebpages.com/json/ok.json' + '?v=' + (new Date().getTime())
+            url = proxy + 'https://aclive.ru/Content/Tests/json/ok.json' + '?v=' + (new Date().getTime())
             let rez;
             try {
+              console.log("request:", url)
               const resp = await fetch(url
                 //   , {
                 //   // mode: 'no-cors', // 'no-cors' //  'cors'
@@ -117,9 +130,36 @@
               console.log('finally rez:', rez)
             }
           }
-          // else if (v === 2) {
-          //   //'https://proxy.cors.sh/' + 'http://miet82.atwebpages.com/json/ok.json'
-          // }
+          else if (v === 2) {
+            let proxy = 'https://proxy.cors.sh/'
+            let url
+            //'https://proxy.cors.sh/' + 'http://miet82.atwebpages.com/json/ok.json'
+            url = proxy + 'https://aclive.ru/Content/Tests/json/ok.json' + '?v=' + (new Date().getTime())
+            url = 'http://miet82.atwebpages.com/json/ok.json' + '?v=' + (new Date().getTime())
+            let rez;
+            try {
+              console.log("request:", url)
+              const resp = await fetch(url, {
+                headers: {
+                  'x-cors-api-key': 'temp_27bc8044229e161f204cf85a4557fe34'
+                }
+              }
+                //   , {
+                //   // mode: 'no-cors', // 'no-cors' //  'cors'
+                //   // headers: {
+                //   //   'Content-Type': 'application/json',
+                //   // }
+                // }
+              )
+              // rez = await resp.text()
+              rez = await resp.json()
+              console.log('rez:', rez)
+            } catch (err) {
+              console.error(err)
+            } finally {
+              console.log('finally rez:', rez)
+            }
+          }
           else {
             alert('doTest Error v ')
           }
