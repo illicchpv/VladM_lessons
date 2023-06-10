@@ -56,7 +56,10 @@
     }
   </style>
 
-  <script src="index.js"></script>
+  <script defer src="https://code.jquery.com/jquery-3.7.0.js"
+    integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+  <script src="index.js" defer></script>
+
 </head>
 
 <body>
@@ -87,6 +90,103 @@
 
       <div class="usersBox" id="usersBox">
       </div>
+
+      <hr>
+      <button onclick="doTest(1)">test1</button>
+      <button onclick="doTest(2)">test2</button>
+      <script>
+        async function doTest(v) {
+          if (v === 1) {
+            let url = 'http://miet82.atwebpages.com/json/ok.json' + '?v=' + (new Date().getTime())
+            let rez;
+            try {
+              const resp = await fetch(url
+                //   , {
+                //   // mode: 'no-cors', // 'no-cors' //  'cors'
+                //   // headers: {
+                //   //   'Content-Type': 'application/json',
+                //   // }
+                // }
+              )
+              // rez = await resp.text()
+              rez = await resp.json()
+              console.log('rez:', rez)
+            } catch (err) {
+              console.error(err)
+            } finally {
+              console.log('finally rez:', rez)
+            }
+          }
+          else if (v === 2) {
+            //'https://proxy.cors.sh/' + 'http://miet82.atwebpages.com/json/ok.json'
+          }
+          else {
+            alert('doTest Error v ')
+          }
+
+          return
+
+          //   debugger;
+
+          //   $.ajax({
+          //     url: 'http://cors-proxy.taskcluster.net/request',
+          //     method: 'POST',
+          //     contentType: 'application/json',
+          //     data: {
+          //       url: 'https://queue.taskcluster.net/v1/ping',
+          //     }
+          //   }).done(function(res) {
+          //     console.log(res);
+          //   });
+
+          //   // $.ajax({
+          //   //   url: 'http://cors-proxy.taskcluster.net/request',
+          //   //   method: 'POST',
+          //   //   contentType: 'application/json',
+          //   //   data: {
+          //   //     url: 'https://queue.taskcluster.net/v1/ping',
+          //   //   }
+          //   // }).done(function(res) {
+          //   //   console.log(res);
+          //   // });
+
+          // return;  
+          /*
+                    let url = 'http://miet82.atwebpages.com/json/ok.json' + '?v=' + (new Date().getTime())
+          
+                    // https://cors-proxy.htmldriven.com/?url=http://miet82.atwebpages.com/json/ok.json
+          
+                    // https://cors-proxy.htmldriven.com/?url=https://aclive.ru/Content/Tests/json/ok.json
+          
+                    // https://thingproxy.freeboard.io/fetch/https://aclive.ru/Content/Tests/json/ok.json
+          
+                    url = 'https://thingproxy.freeboard.io/fetch/http://miet82.atwebpages.com/json/ok.json' + '?v=' + (new Date().getTime())
+          
+                    url = 'https://proxy.cors.sh/' + 'http://miet82.atwebpages.com/json/ok.json' // + '?v=' + (new Date().getTime())
+                    console.log('fetch json started')
+                    debugger
+          
+                    let rez;
+                    try {
+                      const resp = await fetch(url
+                        //   , {
+                        //   // mode: 'no-cors', // 'no-cors' //  'cors'
+                        //   // headers: {
+                        //   //   'Content-Type': 'application/json',
+                        //   // }
+                        // }
+                      )
+                      // rez = await resp.text()
+                      rez = await resp.json()
+                      console.log('rez:', rez)
+                    } catch (err) {
+                      console.error(err)
+                    } finally {
+                      console.log('finally rez:', rez)
+                    }
+          */
+        }        
+      </script>
   </div>
 
   <script id="usersBoxTempl" type="text/template">

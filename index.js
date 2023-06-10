@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 
 })
-function showUsers(rez){
+function showUsers(rez) {
   let $usersBox = document.getElementById('usersBox')
   let t = document.getElementById('usersBoxTempl').innerHTML
   document.getElementById('usersBoxTempl').remove()
