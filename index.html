@@ -97,6 +97,7 @@
       <hr>
       <script>
         async function doTest(v) {
+          // так тоже не получается :(
           // https://cors.sh/
           /*
           fetch('https://proxy.cors.sh/https://acme.com', {
@@ -139,11 +140,12 @@
             let rez;
             try {
               console.log("request:", url)
-              const resp = await fetch(url, {
-                headers: {
-                  'x-cors-api-key': 'temp_27bc8044229e161f204cf85a4557fe34'
+              const resp = await fetch(url
+                , {
+                  headers: {
+                    'x-cors-api-key': 'temp_27bc8044229e161f204cf85a4557fe34'
+                  }
                 }
-              }
                 //   , {
                 //   // mode: 'no-cors', // 'no-cors' //  'cors'
                 //   // headers: {
